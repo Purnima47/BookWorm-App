@@ -53,7 +53,7 @@ router.post("/register", async (req, res) => {
         const token = generateToken(user._id);
 
         // 201 -> resource has been created
-        return res.status(201).json({
+        res.status(201).json({
             token,
             user: {
                 id: user._id,

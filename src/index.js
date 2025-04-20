@@ -9,8 +9,8 @@ import { connectDB } from './lib/db.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// parse the json data
 app.use(cors());
+// parse the json data
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
