@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+import 'dotenv/config';
 
 // const response = await fetch(`http://localhost:3000/api/books`, {
 //     method: "POST",
