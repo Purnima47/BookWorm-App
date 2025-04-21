@@ -16,11 +16,11 @@ import 'dotenv/config';
 const protectRoute = async (req, res, next) => {
     try {
         // get token
-        const token = req.header("Authorization").replace("Bearer", "");
-
-        if (!token) {
+        const authHeader = req.header("Authorization");
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
             return res.status(401).json({ message: "No authentication token, access denied" });
         }
+        const token = authHeader.split(" ")[1]; // clean and reliable
 
         // verify token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
