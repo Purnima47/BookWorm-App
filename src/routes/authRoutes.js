@@ -12,7 +12,7 @@ const generateToken = (userId) => {
 router.post("/register", async (req, res) => {
     try {
         console.log("HEADERS", req.headers);
-        console.log("Incoming body:", req.body); 
+        console.log("Incoming body:", req.body);
         const { email, username, password } = req.body;
 
         if (!username || !email || !password) {
@@ -60,6 +60,7 @@ router.post("/register", async (req, res) => {
                 email: user.email,
                 username: user.username,
                 profileImage: user.profileImage,
+                createdAt: user.createdAt,
             }
         })
 
@@ -100,6 +101,7 @@ router.post("/login", async (req, res) => {
                 email: user.email,
                 username: user.username,
                 profileImage: user.profileImage,
+                createdAt: user.createdAt,
             }
         })
 
