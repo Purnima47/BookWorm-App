@@ -16,8 +16,6 @@ This repository contains the backend API for the Bookworm application. Built usi
 *   [API Endpoints](#api-endpoints)
 *   [Database Setup](#database-setup)
 *   [Environment Variables](#environment-variables)
-*   [Contributing](#contributing)
-*   [License](#license)
 
 ## Features
 
