@@ -2,6 +2,7 @@ import express from "express";
 import User from '../models/User.js'
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
+import { deleteUser } from "../controllers/userController.js";
 
 const router = express.Router();
 
@@ -110,5 +111,7 @@ router.post("/login", async (req, res) => {
         return res.status(500).json({ message: "Internal Server Error" });
     }
 })
+
+router.delete('/:id', deleteUser);
 
 export default router;
