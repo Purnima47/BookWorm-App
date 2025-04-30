@@ -3,6 +3,7 @@ import User from '../models/User.js'
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 import { deleteUser } from "../controllers/userController.js";
+import protectRoute from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
@@ -112,6 +113,6 @@ router.post("/login", async (req, res) => {
     }
 })
 
-router.delete('/:id', deleteUser);
+router.delete('/:id', protectRoute, deleteUser);
 
 export default router;
