@@ -5,16 +5,15 @@ import { addBook, deleteBook, editBook, getAllBooks, getUserBooks } from "../con
 const router = express.Router();
 
 router.post("/", protectRoute, addBook);
-
 // const response = await fetch("https://localhost:3000/api/books?page=3&limit=5")
 
 // pagination -> infinite loading
 router.get("/", protectRoute, getAllBooks);
 
 // get recommended books by the logged in user
-router.get("/user", protectRoute, getUserBooks);
+router.get("/userId", protectRoute, getUserBooks);
 
-router.post("/user/:id", protectRoute, editBook);
+router.post("/userId/:id", protectRoute, editBook);
 
 router.delete("/:id", protectRoute, deleteBook);
 
