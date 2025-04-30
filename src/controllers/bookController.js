@@ -1,4 +1,4 @@
-import Book from "../models/Book";
+import Book from '../models/Book.js';
 import cloudinary from '../lib/cloudinary.js';
 
 const addBook = async (req, res) => {
