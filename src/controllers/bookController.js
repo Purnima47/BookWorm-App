@@ -54,6 +54,8 @@ const getAllBooks = async (req, res) => {
             totalPages: Math.ceil(totalBooks / limit),
         });
 
+        res.json({ message: "Book fetched successfully" });
+
     } catch (error) {
         console.log("Error in get all books route", error);
         res.status(500).json({ message: "Internal server error" });

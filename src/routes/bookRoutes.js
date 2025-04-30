@@ -11,9 +11,9 @@ router.post("/", protectRoute, addBook);
 router.get("/", protectRoute, getAllBooks);
 
 // get recommended books by the logged in user
-router.get("/userId", protectRoute, getUserBooks);
+router.get("/user", protectRoute, getUserBooks);
 
-router.post("/userId/:id", protectRoute, editBook);
+router.post("/user/:id", protectRoute, editBook);
 
 router.delete("/:id", protectRoute, deleteBook);
 
